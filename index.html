@@ -25,7 +25,8 @@
         } */
         body {
 
-            background-color: silver;
+            background-color: blanchedalmond;
+
         }
 
         .navbar {
@@ -33,14 +34,50 @@
             position: sticky;
         }
 
-        .headings {
-            background-color: silver;
+
+        @keyframes typewriter {
+        0%, 100% {
+            width: 0;
+        }
+        20%, 80% {
+            width: 10.2em;
+        }
+        }
+
+        @keyframes caret {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        }
+
+        .typewriter {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typewriter;
+        display: inline-block;
+        position: relative;
+        animation-duration: 7s;
+        animation-timing-function: steps(25, end);
+        animation-iteration-count: infinite;
+        }
+
+
+        .typewriter::after {
+        content: "|";
+        position: absolute;
+        right: 0;
+        animation: caret infinite;
+        animation-duration: 1s;
+        animation-timing-function: steps(1, end);
         }
 
         .form {
             border: 2px solid black;
             border-radius: 5px;
-            background-color: chocolate;
+            background-color: skyblue;
         }
     </style>
 
@@ -85,8 +122,9 @@
     </div>
 
     <!-- About Heading -->
-    <h2 id="about" class="headings" style="text-align:center">About Me</h2>
-
+    <div class="container"style="text-align:center;">
+        <h2 id="about" class="typewriter" style="text-align:center">Some Info About Me.</h2>
+    </div>
     <!-- About Cards -->
 
     <div class="card" style="max-width: 100%;">
@@ -186,7 +224,9 @@
         </div>
     </div>
     <!-- MY Projects -->
-    <h2 id="project" class="headings" style="text-align:center">My Works</h2>
+    <div class="container"style="text-align:center;">
+        <h2 id="project" class="typewriter" style="text-align:center">Explore My Projects.</h2>
+    </div>
 
     <!-- Projects Cards -->
 
@@ -333,7 +373,9 @@
     </div>
 
     <!-- Some Certificates -->
-    <h2 id="certificates" class="certificates" style="text-align:center">My Certificates</h2>
+    <div class="container"style="text-align:center;">
+        <h2 id="certificates" class="typewriter" style="text-align:center">Technical Certificates.</h2>
+    </div>
 
     <div class="card-group">
         <div class="card">
@@ -365,8 +407,9 @@
 
 
     <!-- Contact Page -->
-    <h2 id="contact" class="headings mt-2" style="text-align:center">Contact Me</h2>
-
+    <div class="container"style="text-align:center;">
+        <h2 id="contact" class="typewriter" style="text-align:center">Get in Touch With Me.</h2>
+    </div>
     <!-- Bootstrap Form -->
     <div class="container form">
         <form action="https://formspree.io/mbjpjzad" method="POST" enctype="multipart/form-data">
@@ -386,8 +429,16 @@
                 <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Write from your heart."></textarea>
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
-            <a href="https://t.me/Mah2422" class="btn btn-primary" target="_blank">On Telegram</a>
-            <h6 class="mt-2 text-light" style="text-align: center;">Email: arshadaman202@gmail.com</h6>
+            <div class="container" style="text-align: center;">
+                <a href="https://t.me/Mah2422" class="btn btn-primary" target="_blank" style="text-align: center;">Join
+                    On Telegram</a>
+                <a href="https://twitter.com/MeArshadaman" class="btn btn-info" target="_blank"
+                    style="text-align: center;">Follow Me On Twitter</a>
+                <a href="https://www.linkedin.com/in/arshad-aman" class="btn btn-success" target="_blank"
+                    style="text-align: center;">Connect with me on Linkdin</a>
+                <a href="mailto:arshadaman202@gmail.com?subject=Mailed From Your Website" class="btn btn-danger"
+                    target="_blank" style="text-align: center;">Click here to send me an email!!!</a>
+            </div>
         </form>
     </div>
     <!-- Optional JavaScript -->
